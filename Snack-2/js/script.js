@@ -23,8 +23,6 @@ for(let i = 0; i < 5; i++){
     soccerTeams.push(newSoccerTeam);
 }
 
-console.log(soccerTeams);
-
 function randomPoints(){
     return Math.floor(Math.random() * 50);
 }
@@ -33,7 +31,20 @@ function randomFouls(){
     return Math.floor(Math.random() * 150);
 }
 
-for( let i = 0; i < soccerTeams.length; i++ ) {
-    const tmpSoccerTeam = soccerTeams[i];
-    console.log(`${tmpSoccerTeam.nome} : ${tmpSoccerTeam.puntiFatti}`)
+console.log(soccerTeams)
+
+const modifiedSoccerteams = [];
+let tmpModifiedSoccerTeam;
+
+for(let i = 0; i < soccerTeams.length; i++){
+    tmpModifiedSoccerTeam = soccerTeams[i];
+    const {nome,falliSubiti} = tmpModifiedSoccerTeam;
+    const tmpSquadra = {
+        nome,
+        falliSubiti
+    };
+
+    modifiedSoccerteams.push(tmpSquadra);
 }
+
+console.log(modifiedSoccerteams);
